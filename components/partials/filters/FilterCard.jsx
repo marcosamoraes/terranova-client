@@ -15,9 +15,9 @@ const FilterCard = ({ columns }) => {
     setFilterRows([...filterRows, { id: newId }]);
   };
 
-  const removeFilterRow = () => {
+  const removeFilterRow = (rowId) => {
     if (filterRows.length > 1) {
-      setFilterRows(filterRows.slice(0, -1));
+      setFilterRows(filterRows.filter(row => row.id !== rowId));
     }
   };
 
@@ -31,7 +31,7 @@ const FilterCard = ({ columns }) => {
                 key={row.id}
                 columns={columns}
                 isRemovable={index > 0}
-                onRemove={removeFilterRow}
+                onRemove={() => removeFilterRow(row.id)}
               />
             ))}
           </div>

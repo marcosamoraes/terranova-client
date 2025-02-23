@@ -1,6 +1,5 @@
 import Select from "@/components/ui/Select";
 import InputGroup from "@/components/ui/InputGroup";
-import Icon from "@/components/ui/Icon";
 import Button from "@/components/ui/Button";
 
 const FilterRow = ({ onRemove, isRemovable, columns }) => {

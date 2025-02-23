@@ -1,4 +1,7 @@
+import { Icon } from "@iconify/react";
+
 const columns = [
+  { label: "Itens", field: "items" },
   { label: "Pedido", field: "order" },
   { label: "Referência", field: "reference" },
   { label: "Fabricante", field: "manufacturer" },
@@ -25,7 +28,12 @@ const OrderTab = ({ process }) => {
                 <tr key={i} className="even:bg-slate-200 dark:even:bg-slate-700">
                   {columns.map((column) =>
                     <td key={column.label} className="table-td text-center">
-                      {row[column.field]}
+                      {column.field === "items" ? (
+                        <Icon icon="fa:plus-square-o" className="text-primary-500 cursor-pointer m-auto text-xl" />
+                      ) : null}
+                      {column.field !== "items" ? (
+                        row[column.field]
+                      ) : null}
                     </td>
                   )}
                 </tr>

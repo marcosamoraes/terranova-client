@@ -2,19 +2,19 @@ export const menuItems = [
   {
     title: "Painel",
     icon: "heroicons-outline:home",
-    link: "dashboard",
+    link: "/dashboard",
     isHide: true,
   },
   {
     title: "Processos",
     icon: "heroicons-outline:folder",
-    link: "processos",
+    link: "/processos",
     isHide: true,
   },
   {
     title: "Financeiro",
     icon: "heroicons-outline:currency-dollar",
-    link: "financeiro",
+    link: "/financeiro",
     isHide: true,
   },
   {
@@ -25,22 +25,22 @@ export const menuItems = [
     child: [
       {
         childtitle: "Controle de Estoque",
-        childlink: "relatorios/controle-de-estoque",
+        childlink: "/relatorios/controle-de-estoque",
       },
       {
         childtitle: "Vencimento de Processos",
-        childlink: "relatorios/vencimento-de-processos",
+        childlink: "/relatorios/vencimento-de-processos",
       },
       {
         childtitle: "Contas a Pagar",
-        childlink: "relatorios/contas-a-pagar",
+        childlink: "/relatorios/contas-a-pagar",
       },
     ],
   },
   {
     title: "Usuários",
     icon: "heroicons-outline:users",
-    link: "usuarios",
+    link: "/usuarios",
     isHide: true,
   },
 ];
@@ -53,27 +53,27 @@ export const topMenu = [
     child: [
       {
         childtitle: "Analytics Dashboard",
-        childlink: "dashboard",
+        childlink: "/dashboard",
         childicon: "heroicons:presentation-chart-line",
       },
       {
         childtitle: "Ecommerce Dashboard",
-        childlink: "ecommerce",
+        childlink: "/ecommerce",
         childicon: "heroicons:shopping-cart",
       },
       {
         childtitle: "Project  Dashboard",
-        childlink: "project",
+        childlink: "/project",
         childicon: "heroicons:briefcase",
       },
       {
         childtitle: "CRM Dashboard",
-        childlink: "crm",
+        childlink: "/crm",
         childicon: "ri:customer-service-2-fill",
       },
       {
         childtitle: "Banking Dashboard",
-        childlink: "banking",
+        childlink: "/banking",
         childicon: "heroicons:wrench-screwdriver",
       },
     ],
@@ -85,22 +85,22 @@ export const topMenu = [
     child: [
       {
         childtitle: "Calendar",
-        childlink: "calender",
+        childlink: "/calender",
         childicon: "heroicons-outline:calendar",
       },
       {
         childtitle: "Kanban",
-        childlink: "kanban",
+        childlink: "/kanban",
         childicon: "heroicons-outline:view-boards",
       },
       {
         childtitle: "Todo",
-        childlink: "todo",
+        childlink: "/todo",
         childicon: "heroicons-outline:clipboard-check",
       },
       {
         childtitle: "Projects",
-        childlink: "projects",
+        childlink: "/projects",
         childicon: "heroicons-outline:document",
       },
     ],
