@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@/components/ui/Card";
+import { Icon } from "@iconify/react";
 
 const Task = ({ task }) => {
   const {
@@ -15,7 +16,10 @@ const Task = ({ task }) => {
           <div className="font-medium text-base leading-6">
             <div className="dark:text-slate-200 text-slate-900 max-w-[160px] truncate">
               {name}<br />
-              <small>{des}</small>
+              <small className="flex items-center space-x-1 gap-1">
+                <Icon icon="fa:ship" className="text-primary-500" />
+                {des}
+              </small>
             </div>
           </div>
         </div>

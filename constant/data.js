@@ -28,6 +28,10 @@ export const menuItems = [
         childlink: "#",
       },
       {
+        childtitle: "Controle de Contêiner",
+        childlink: "#",
+      },
+      {
         childtitle: "Vencimento de Processos",
         childlink: "#",
       },
@@ -410,7 +414,7 @@ export const message = [
     active: true,
     hasnotifaction: true,
     notification_count: 1,
-    image: "/assets/images/all-img/user1.png",
+    image: "/assets/images/all-img/user.png",
     link: "#",
   },
   {

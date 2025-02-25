@@ -94,6 +94,20 @@ const Dashboard = () => {
             Categorias Disponíveis
           </div>
           <ul className="space-y-2">
+            <li>
+              <Checkbox
+                activeClass="bg-primary-500"
+                label="Todos"
+                value={selectedCategories.length === categories.length}
+                onChange={() =>
+                  setSelectedCategories(
+                    selectedCategories.length === categories.length
+                      ? []
+                      : categories.map((c) => c.value)
+                  )
+                }
+              />
+            </li>
             {categories.map((category) => (
               <li key={category.value}>
                 <Checkbox

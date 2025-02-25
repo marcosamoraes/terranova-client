@@ -12,11 +12,18 @@ const DisplayColumnsModal = ({ activeModal, onClose, columns, visibleColumns, to
       activeModal={activeModal}
       onClose={onClose}
       footerContent={
-        <Button
-          text="Fechar"
-          className="btn-primary"
-          onClick={onClose}
-        />
+        <>
+          <Button
+            text="Salvar"
+            className="btn-primary"
+            onClick={onClose}
+          />
+          <Button
+            text="Fechar"
+            className="btn-secondary"
+            onClick={onClose}
+          />
+        </>
       }
     >
       <div className="grid grid-cols-3 gap-4 p-4">

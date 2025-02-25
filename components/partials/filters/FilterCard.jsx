@@ -72,7 +72,7 @@ const FilterCard = ({ columns }) => {
             className="btn-primary"
           />
 
-          <Button icon="heroicons-outline:document-download" className="btn-success" />
+          <Button icon="fa:file-excel-o" className="btn-success" />
         </div>
       </div>
     </Card>

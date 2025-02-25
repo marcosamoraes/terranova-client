@@ -12,7 +12,7 @@ const Login = () => {
     <>
       <div className="loginwrapper">
         <div className="lg-inner-column">
-          <div className="left-column relative z-[1] bg-[url('/assets/images/auth/bg.jpg')] bg-cover bg-center h-full flex items-center justify-center before:content-[''] before:block before:absolute before:inset-0 before:bg-black-500 before:bg-opacity-60 before:z-[-1] before:rounded-[10px] before:overflow-hidden">
+          <div className="left-column relative z-[1] bg-[url('/assets/images/auth/bg2.jpg')] bg-cover bg-center h-full flex items-center justify-center before:content-[''] before:block before:absolute before:inset-0 before:bg-black-500 before:bg-opacity-60 before:z-[-1] before:rounded-[10px] before:overflow-hidden">
             <div className="pt-20 flex justify-center">
               <img
                 src={
