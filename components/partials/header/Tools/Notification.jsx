@@ -23,7 +23,7 @@ const Notification = () => {
           Notifications
         </div>
         <div className="text-slate-800 dark:text-slate-200 text-xs md:text-right">
-          <Link href="/notifications" className="underline">
+          <Link href="#" className="underline">
             View all
           </Link>
         </div>

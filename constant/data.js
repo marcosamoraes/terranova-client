@@ -14,7 +14,7 @@ export const menuItems = [
   {
     title: "Financeiro",
     icon: "heroicons-outline:currency-dollar",
-    link: "/financeiro",
+    link: "#",
     isHide: true,
   },
   {
@@ -25,22 +25,22 @@ export const menuItems = [
     child: [
       {
         childtitle: "Controle de Estoque",
-        childlink: "/relatorios/controle-de-estoque",
+        childlink: "#",
       },
       {
         childtitle: "Vencimento de Processos",
-        childlink: "/relatorios/vencimento-de-processos",
+        childlink: "#",
       },
       {
         childtitle: "Contas a Pagar",
-        childlink: "/relatorios/contas-a-pagar",
+        childlink: "#",
       },
     ],
   },
   {
     title: "Usuários",
     icon: "heroicons-outline:users",
-    link: "/usuarios",
+    link: "#",
     isHide: true,
   },
 ];

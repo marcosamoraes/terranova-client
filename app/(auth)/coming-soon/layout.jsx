@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Dashcode Next Js',
+  title: 'Terra Nova',
   description: 'Dashcode is a popular dashboard template.',
 }
 

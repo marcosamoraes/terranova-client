@@ -29,7 +29,7 @@ const Message = () => {
           Messages
         </div>
         <div className="text-slate-800 dark:text-slate-200 text-xs md:text-right">
-          <Link href="/chat" className="underline">
+          <Link href="#" className="underline">
             View all
           </Link>
         </div>

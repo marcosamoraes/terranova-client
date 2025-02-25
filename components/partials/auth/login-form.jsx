@@ -58,7 +58,7 @@ const LoginForm = () => {
       <Textinput
         name="email"
         label="Email"
-        defaultValue="dashcode@gmail.com"
+        defaultValue="contato@terranova.com"
         type="email"
         register={register}
         error={errors?.email}
@@ -67,13 +67,13 @@ const LoginForm = () => {
         name="password"
         label="Senha"
         type="password"
-        defaultValue="dashcode"
+        defaultValue="terranova"
         register={register}
         error={errors.password}
       />
       <div className="flex justify-end">
         <Link
-          href="/forgot-password"
+          href="#"
           className="text-sm text-slate-800 dark:text-slate-400 leading-6 font-medium"
         >
           Esqueceu a Senha?{" "}
