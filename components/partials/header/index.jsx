@@ -72,18 +72,6 @@ const Header = ({ className = "custom-class" }) => {
           {menuType === "vertical" && (
             <div className="flex items-center md:space-x-4 space-x-2 rtl:space-x-reverse">
               {width >= breakpoints.md && <Breadcrumbs />}
-              {collapsed && width >= breakpoints.xl && (
-                <button
-                  className="text-xl text-slate-900 dark:text-white"
-                  onClick={() => setMenuCollapsed(!collapsed)}
-                >
-                  {isRtl ? (
-                    <Icon icon="akar-icons:arrow-left" />
-                  ) : (
-                    <Icon icon="akar-icons:arrow-right" />
-                  )}
-                </button>
-              )}
               {width < breakpoints.xl && <Logo />}
               {/* open mobile menu handlaer*/}
               {width < breakpoints.xl && width >= breakpoints.md && (
