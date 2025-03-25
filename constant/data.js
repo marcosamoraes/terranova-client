@@ -47,6 +47,18 @@ export const menuItems = [
     link: "#",
     isHide: true,
   },
+  {
+    title: "Clientes",
+    icon: "heroicons-outline:user-group",
+    link: "#",
+    isHide: true,
+  },
+  {
+    title: "Atividades (Logs)",
+    icon: "heroicons-outline:document",
+    link: "#",
+    isHide: true,
+  },
 ];
 
 export const topMenu = [

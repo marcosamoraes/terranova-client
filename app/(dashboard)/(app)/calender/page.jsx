@@ -94,7 +94,7 @@ const CalenderPage = () => {
 
   return (
     <div className="dashcode-calender">
-      <h4 className="font-medium lg:text-2xl text-xl capitalize text-slate-900 inline-block ltr:pr-4 rtl:pl-4 mb-6">
+      <h4 className="font-medium lg:text-xl text-xl capitalize text-slate-900 inline-block ltr:pr-4 rtl:pl-4 mb-6">
         Calender
       </h4>
       <div className="grid grid-cols-12 gap-4">

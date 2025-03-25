@@ -44,7 +44,7 @@ const Processes = () => {
 
   return (
     <div>
-      <h4 className="font-medium lg:text-2xl text-xl capitalize text-slate-900 mb-5">
+      <h4 className="font-medium lg:text-xl text-xl capitalize text-slate-900 mb-5">
         Processos
       </h4>
       <FilterCard columns={columns} />

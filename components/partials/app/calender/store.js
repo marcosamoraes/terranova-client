@@ -16,21 +16,19 @@ export const dashboardCalenderSlice = createSlice({
   initialState: {
     categories: [
       {
+        label: "Pré Embarque",
+        value: "pre-embarque",
+        activeClass: "ring-warning-500 bg-warning-500",
+      },
+      {
         label: "Embarque",
         value: "embarque",
         activeClass: "ring-warning-500 bg-warning-500",
       },
-
       {
         label: "Chegada",
         value: "chegada",
         activeClass: "ring-success-500 bg-success-500",
-      },
-
-      {
-        label: "Disponível para Registro",
-        value: "disponivel-para-registro",
-        activeClass: "ring-purple-500 bg-purple-500",
       },
       {
         label: "Presença de Carga",
@@ -38,8 +36,18 @@ export const dashboardCalenderSlice = createSlice({
         activeClass: "ring-blue-500 bg-blue-500",
       },
       {
+        label: "Disponível para Registro",
+        value: "disponivel-para-registro",
+        activeClass: "ring-purple-500 bg-purple-500",
+      },
+      {
         label: "Disponível para Faturamento",
         value: "disponivel-para-faturamento",
+        activeClass: "ring-gray-500 bg-gray-500",
+      },
+      {
+        label: "Entrega",
+        value: "entrega",
         activeClass: "ring-gray-500 bg-gray-500",
       },
     ],

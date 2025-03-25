@@ -54,42 +54,18 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h4 className="font-medium lg:text-2xl text-xl capitalize text-slate-900 mb-5">
+      <h4 className="font-medium lg:text-xl text-xl capitalize text-slate-900 mb-5">
         Processos por Etapas
       </h4>
       <div className="grid grid-cols-12 gap-5 mb-5">
         <div className="col-span-12">
-          <div className="grid md:grid-cols-4 grid-cols-1 gap-4">
+          <div className="grid md:grid-cols-8 grid-cols-1 gap-4">
             <GroupChart2 />
           </div>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-5 dashcode-calender">
-        <Card className="lg:col-span-9 col-span-12 bg-white">
-          <FullCalendar
-            locale={ptBrLocale}
-            plugins={[
-              dayGridPlugin,
-              timeGridPlugin,
-              interactionPlugin,
-              listPlugin,
-            ]}
-            headerToolbar={{
-              left: "prev,next today",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
-            }}
-            events={filteredEvents}
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={2}
-            weekends={true}
-            eventClassNames={handleClassName}
-            initialView="dayGridMonth"
-          />
-        </Card>
-        <Card className="lg:col-span-3 col-span-12 bg-white">
+        <Card className="lg:col-span-2 col-span-12 bg-white">
           <div className="block pb-4 text-slate-800 dark:text-slate-400 font-semibold text-xs uppercase">
             Categorias Disponíveis
           </div>
@@ -120,8 +96,33 @@ const Dashboard = () => {
             ))}
           </ul>
         </Card>
+        <Card className="lg:col-span-10 col-span-12 bg-white">
+          <FullCalendar
+            locale={ptBrLocale}
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
+            headerToolbar={{
+              left: "prev,next today",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+            }}
+            events={filteredEvents}
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={2}
+            weekends={true}
+            height={600}
+            eventClassNames={handleClassName}
+            initialView="dayGridMonth"
+          />
+        </Card>
       </div>
-      <h4 className="font-medium lg:text-2xl text-xl capitalize text-slate-900 mt-10">
+      <h4 className="font-medium lg:text-xl text-xl capitalize text-slate-900 mt-10">
         FUP Importação - 13/02/2025
       </h4>
       <div className="grid grid-cols-12 gap-5">

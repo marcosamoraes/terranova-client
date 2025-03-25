@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const useSemiDark = () => {
   const dispatch = useDispatch();
-  const isSemiDark = useSelector((state) => state.layout.semiDarkMode);
+  const isSemiDark = useSelector((state) => false);
   const setSemiDark = (val) => {
     dispatch(handleSemiDarkMode(val));
     localStorage.setItem("semiDarkMode", JSON.stringify(val));

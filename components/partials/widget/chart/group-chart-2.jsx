@@ -1,65 +1,68 @@
 "use client"
 import Card from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
+import Tooltip from "@/components/ui/Tooltip";
 import dynamic from "next/dynamic";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const statistics = [
   {
-    title: "Embarque",
+    title: "Todos",
     count: "50",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "fa:ship",
+    icon: "lucide:list-checks",
+  },
+  {
+    title: "Pré Embarque",
+    count: "30",
+    bg: "bg-primary-500 dark:bg-primary-500	",
+    text: "text-white",
+    icon: "lucide:ship",
+  },
+  {
+    title: "Embarque",
+    count: "20",
+    bg: "bg-primary-500 dark:bg-primary-500	",
+    text: "text-white",
+    icon: "lucide:ship-wheel",
   },
   {
     title: "Chegada",
-    count: "30",
-    bg: "bg-primary-500 dark:bg-primary-500	",
-    text: "text-white",
-    icon: "fa:building",
-  },
-  {
-    title: "Disponível para Registro",
-    count: "20",
-    bg: "bg-primary-500 dark:bg-primary-500	",
-    text: "text-white",
-    icon: "fa:list-alt",
-  },
-  {
-    title: "Presença de carga",
     count: "10",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "entypo:box",
+    icon: "lucide:plane-landing",
   },
   {
-    title: "Item 05",
+    title: "Presença de Carga",
     count: "50",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "fa:ship",
+    icon: "lucide:package",
   },
   {
-    title: "Item 06",
+    title: "Registro",
+    tooltip: "Disponível para Registro",
     count: "30",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "fa:building",
+    icon: "lucide:receipt",
   },
   {
-    title: "Item 07",
+    title: "Faturamento",
+    tooltip: "Disponível para Faturamento",
     count: "20",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "fa:list-alt",
+    icon: "lucide:file-clock",
   },
   {
-    title: "Item 08",
+    title: "Entrega",
     count: "10",
     bg: "bg-primary-500 dark:bg-primary-500	",
     text: "text-white",
-    icon: "entypo:box",
+    icon: "lucide:package-check",
   },
 ];
 
@@ -77,10 +80,20 @@ const GroupChart2 = () => {
                   <Icon icon={item.icon} />
                 </div>
               </div>
-              <div className="flex-1">
-                <div className="text-slate-600 dark:text-slate-300 text-sm mb-1 font-medium">
-                  {item.title}
-                </div>
+              <div className="flex-1"> 
+              <div 
+                className="text-slate-600 dark:text-slate-300 text-sm mb-1 font-medium max-w-[80%] truncate"
+                title={item.title}  // This adds the tooltip on hover
+              >
+                <Tooltip
+                  title={item.title}
+                  content={item.tooltip ?? item.title}
+                  placement="top"
+                  arrow
+                >
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-1 font-medium max-w-[100%] truncate">{item.title}</p>
+                </Tooltip>
+              </div>
                 <div className="text-slate-900 dark:text-white text-lg font-medium">
                   {item.count}
                 </div>

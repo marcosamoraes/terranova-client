@@ -15,7 +15,7 @@ const themeConfig = {
     footerType: "static",
     isMonochrome: false,
     menu: {
-      isCollapsed: false,
+      isCollapsed: true,
       isHidden: false,
     },
     mobileMenu: false,

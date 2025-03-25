@@ -15,6 +15,7 @@ import Message from "./Tools/Message";
 import Language from "./Tools/Language";
 import useRtl from "@/hooks/useRtl";
 import useMobileMenu from "@/hooks/useMobileMenu";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const Header = ({ className = "custom-class" }) => {
   const [collapsed, setMenuCollapsed] = useSidebar();
@@ -61,7 +62,7 @@ const Header = ({ className = "custom-class" }) => {
              ${
                menuType === "horizontal" && width > breakpoints.xl
                  ? "py-1"
-                 : "md:py-6 py-3"
+                 : "md:py-3 py-3"
              }
         `}
       >
@@ -70,6 +71,7 @@ const Header = ({ className = "custom-class" }) => {
 
           {menuType === "vertical" && (
             <div className="flex items-center md:space-x-4 space-x-2 rtl:space-x-reverse">
+              {width >= breakpoints.md && <Breadcrumbs />}
               {collapsed && width >= breakpoints.xl && (
                 <button
                   className="text-xl text-slate-900 dark:text-white"

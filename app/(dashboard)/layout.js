@@ -127,17 +127,12 @@ export default function RootLayout({ children }) {
               }}
             >
               <Suspense fallback={<Loading />}>
-                <Breadcrumbs />
                 {children}
               </Suspense>
             </motion.div>
           </div>
         </div>
       </div>
-      {width < breakpoints.md && <MobileFooter />}
-      {width > breakpoints.md && (
-        <Footer className={width > breakpoints.xl ? switchHeaderClass() : ""} />
-      )}
     </div>
   );
 }
