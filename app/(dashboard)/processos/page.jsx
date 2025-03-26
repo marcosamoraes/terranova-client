@@ -34,7 +34,7 @@ const Processes = () => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-120px)] gap-5">
+    <div className="flex flex-col h-[calc(100vh-140px)] gap-5">
       <FilterCard columns={columns} toggleModal={toggleModal} />
       <Card noborder className="h-full flex-1 flex flex-col overflow-hidden" bodyClass="h-full">
         <div className="h-full overflow-auto flex-1">

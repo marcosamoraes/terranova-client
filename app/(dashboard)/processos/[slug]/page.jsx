@@ -47,7 +47,7 @@ const Process = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         {[
           { label: "Importação", value: process.import },
           { label: "Invoice", value: process.invoice },
@@ -82,7 +82,7 @@ const Process = () => {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="p-4">
+          <Tab.Panels className="p-2">
             {tabs.map((tab, idx) => (
               <Tab.Panel key={idx} className="text-slate-600">
                 {tab.element ? tab.element : <div>Aba {tab.label} em construção...</div>}
