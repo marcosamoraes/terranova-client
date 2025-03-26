@@ -47,7 +47,7 @@ const Processes = () => {
       <h4 className="font-medium lg:text-xl text-xl capitalize text-slate-900 mb-5">
         Processos
       </h4>
-      <FilterCard columns={columns} />
+      <FilterCard columns={columns} toggleModal={toggleModal} />
       <Card noborder>
         <div className="flex justify-end mb-4 px-4">
           <Pagination
@@ -102,13 +102,6 @@ const Processes = () => {
         <div className="text-sm text-slate-500 dark:text-slate-400 font-bold">
           Exibindo 25 Registros de 500
         </div>
-        <button
-          onClick={toggleModal}
-          className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 font-bold"
-        >
-          <Icon icon="fa:cog" />
-          Exibição de Colunas
-        </button>
       </div>
 
       <DisplayColumnsModal 

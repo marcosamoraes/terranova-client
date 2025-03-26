@@ -4,17 +4,17 @@ import Button from "@/components/ui/Button";
 
 const FilterRow = ({ onRemove, isRemovable, columns }) => {
   return (
-    <div className="flex gap-4 items-start mb-4">
+    <div className={`flex gap-3 items-start ${isRemovable ? "-mr-12" : ""}`}>
       <div className="flex-1">
         <Select
-          label="Campo"
+          placeholder="Campo..."
           options={columns.map(col => col.label)}
         />
       </div>
 
       <div className="flex-1">
         <Select
-          label="Operador"
+          placeholder="Operador..."
           options={[
             "Igual",
             "Diferente de",
@@ -26,7 +26,7 @@ const FilterRow = ({ onRemove, isRemovable, columns }) => {
 
       <div className="flex-1">
         <Select
-          label="FUP"
+          placeholder="FUP..."
           options={[
             "Embarque",
             "Chegada",
@@ -40,15 +40,12 @@ const FilterRow = ({ onRemove, isRemovable, columns }) => {
       <div className="flex-1">
         <InputGroup
           type="text"
-          label="Termo de Busca"
-          placeholder="Digite o termo"
+          placeholder="Termo de Busca..."
         />
       </div>
 
       {isRemovable && (
-        <div className="pt-8 -mr-[62px]">
-          <Button icon="heroicons-outline:trash" className="btn-danger h-9 w-4" onClick={onRemove} />
-        </div>
+        <Button icon="heroicons-outline:trash" className="btn-danger h-9" onClick={onRemove} />
       )}
     </div>
   );

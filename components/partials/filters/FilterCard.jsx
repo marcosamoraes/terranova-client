@@ -6,7 +6,7 @@ import FilterRow from "./FilterRow";
 import "flatpickr/dist/themes/light.css";
 import Button from '@/components/ui/Button';
 
-const FilterCard = ({ columns }) => {
+const FilterCard = ({ columns, toggleModal }) => {
   const [filterRows, setFilterRows] = useState([{ id: 1 }]);
   const [dateRange, setDateRange] = useState([]);
 
@@ -22,25 +22,23 @@ const FilterCard = ({ columns }) => {
   };
 
   return (
-    <Card className="mb-6 bg-white">
-      <div className="p-4">
-        <div className="flex justify-between mb-4">
+    <Card className="mb-6 bg-white" bodyClass="px-2 py-1">
+      <div className="p-4 flex gap-3">
+        <div className="flex flex-wrap flex-col flex-1 gap-3">
+          {filterRows.map((row, key) => (
+            <FilterRow
+              key={row.id}
+              columns={columns}
+              isRemovable={key > 0}
+              onRemove={() => removeFilterRow(row.id)}
+            />
+          ))}
+        </div>
+        <div className="flex justify-end gap-3 h-9">
           <div className="flex-1">
-            {filterRows.map((row, index) => (
-              <FilterRow
-                key={row.id}
-                columns={columns}
-                isRemovable={index > 0}
-                onRemove={() => removeFilterRow(row.id)}
-              />
-            ))}
-          </div>
-          
-          <div className="ml-4 min-w-[300px]">
-            <label className="form-label">Período</label>
             <Flatpickr
               value={dateRange}
-              placeholder="Selecione um período"
+              placeholder="Selecione um período..."
               className="form-control py-2"
               onChange={(dates) => setDateRange(dates)}
               options={{
@@ -61,9 +59,7 @@ const FilterCard = ({ columns }) => {
               }}
             />
           </div>
-        </div>
 
-        <div className="flex justify-end gap-2">
           <Button icon="heroicons-outline:plus" className="btn-dark" onClick={addFilterRow} />
 
           <Button
@@ -73,6 +69,8 @@ const FilterCard = ({ columns }) => {
           />
 
           <Button icon="fa:file-excel-o" className="btn-success" />
+
+          <Button icon="fa:cog" className="btn-light" onClick={toggleModal} />
         </div>
       </div>
     </Card>
