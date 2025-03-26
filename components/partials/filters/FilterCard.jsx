@@ -22,7 +22,7 @@ const FilterCard = ({ columns, toggleModal }) => {
   };
 
   return (
-    <Card className="mb-6 bg-white" bodyClass="px-2 py-1">
+    <Card className="bg-white" bodyClass="px-2 py-1">
       <div className="p-4 flex gap-3">
         <div className="flex flex-wrap flex-col flex-1 gap-3">
           {filterRows.map((row, key) => (
