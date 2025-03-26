@@ -18,12 +18,12 @@ export const dashboardCalenderSlice = createSlice({
       {
         label: "Pré Embarque",
         value: "pre-embarque",
-        activeClass: "ring-warning-500 bg-warning-500",
+        activeClass: "ring-amber-500 bg-amber-500",
       },
       {
         label: "Embarque",
         value: "embarque",
-        activeClass: "ring-warning-500 bg-warning-500",
+        activeClass: "ring-orange-500 bg-orange-500",
       },
       {
         label: "Chegada",
@@ -48,7 +48,7 @@ export const dashboardCalenderSlice = createSlice({
       {
         label: "Entrega",
         value: "entrega",
-        activeClass: "ring-gray-500 bg-gray-500",
+        activeClass: "ring-indigo-500 bg-indigo-500",
       },
     ],
     calendarEvents: [
@@ -59,6 +59,39 @@ export const dashboardCalenderSlice = createSlice({
         end: nextDay,
         allDay: true,
         //className: "warning",
+        extendedProps: {
+          calendar: "pre-embarque",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "20",
+        allDay: true,
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -8),
+        // className: "info",
+        extendedProps: {
+          calendar: "chegada",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "30",
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+        allDay: true,
+        //className: "success",
+        extendedProps: {
+          calendar: "pre-embarque",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "30",
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+        allDay: true,
+        //className: "success",
         extendedProps: {
           calendar: "embarque",
         },
@@ -76,17 +109,6 @@ export const dashboardCalenderSlice = createSlice({
       },
       {
         id: uuidv4(),
-        title: "20",
-        allDay: true,
-        start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
-        end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
-        // className: "info",
-        extendedProps: {
-          calendar: "disponivel-para-registro",
-        },
-      },
-      {
-        id: uuidv4(),
         title: "10",
         start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
         end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
@@ -98,13 +120,46 @@ export const dashboardCalenderSlice = createSlice({
       },
       {
         id: uuidv4(),
+        title: "30",
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+        allDay: true,
+        //className: "success",
+        extendedProps: {
+          calendar: "disponivel-para-registro",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "30",
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+        allDay: true,
+        //className: "success",
+        extendedProps: {
+          calendar: "disponivel-para-faturamento",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "30",
+        start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+        end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+        allDay: true,
+        //className: "success",
+        extendedProps: {
+          calendar: "entrega",
+        },
+      },
+      {
+        id: uuidv4(),
         title: "10",
         start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
         end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
         allDay: true,
         // className: "danger",
         extendedProps: {
-          calendar: "disponivel-para-faturamento",
+          calendar: "disponivel-para-registro",
         },
       },
       {
@@ -115,7 +170,18 @@ export const dashboardCalenderSlice = createSlice({
         allDay: true,
         //className: "primary",
         extendedProps: {
-          calendar: "embarque",
+          calendar: "disponivel-para-faturamento",
+        },
+      },
+      {
+        id: uuidv4(),
+        title: "30",
+        start: nextMonth,
+        end: nextMonth,
+        allDay: true,
+        //className: "primary",
+        extendedProps: {
+          calendar: "entrega",
         },
       },
     ],

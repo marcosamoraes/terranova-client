@@ -11,7 +11,6 @@ export const appKanbanSlice = createSlice({
     isLoading: null,
     openTaskId: null,
 
-    // for edit
     editModal: false,
     editItem: {},
     columns: [
@@ -49,11 +48,29 @@ export const appKanbanSlice = createSlice({
             des: "Marítimo",
             date: "08/02/25",
           },
+          {
+            id: uuidv4(),
+            name: "TI 38519-00",
+            des: "Marítimo",
+            date: "08/02/25",
+          },
+          {
+            id: uuidv4(),
+            name: "TI 38519-00",
+            des: "Marítimo",
+            date: "08/02/25",
+          },
+          {
+            id: uuidv4(),
+            name: "TI 38519-00",
+            des: "Marítimo",
+            date: "08/02/25",
+          },
         ],
       },
       {
         id: uuidv4(),
-        name: "Trânsito",
+        name: "Embarque",
         tasks: [
           {
             id: uuidv4(),
@@ -83,7 +100,7 @@ export const appKanbanSlice = createSlice({
       },
       {
         id: uuidv4(),
-        name: "Desembargo",
+        name: "Chegada",
         tasks: [
           {
             id: uuidv4(),
@@ -107,7 +124,7 @@ export const appKanbanSlice = createSlice({
       },
       {
         id: uuidv4(),
-        name: "Faturamento",
+        name: "Presença de Carga",
         tasks: [
           {
             id: uuidv4(),
@@ -125,7 +142,7 @@ export const appKanbanSlice = createSlice({
       },
       {
         id: uuidv4(),
-        name: "Item 05",
+        name: "Disponível para Registro",
         tasks: [
           {
             id: uuidv4(),
@@ -137,7 +154,19 @@ export const appKanbanSlice = createSlice({
       },
       {
         id: uuidv4(),
-        name: "Item 06",
+        name: "Disponível para Faturamento",
+        tasks: [
+          {
+            id: uuidv4(),
+            name: "TI 38519-00",
+            des: "Marítimo",
+            date: "08/02/25",
+          },
+        ],
+      },
+      {
+        id: uuidv4(),
+        name: "Entrega",
         tasks: [
           {
             id: uuidv4(),

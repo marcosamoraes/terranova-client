@@ -1,8 +1,14 @@
 export const menuItems = [
   {
     title: "Painel",
-    icon: "heroicons-outline:home",
+    icon: "mage:dashboard-bar",
     link: "/dashboard",
+    isHide: true,
+  },
+  {
+    title: "Painel 2",
+    icon: "mage:dashboard-bar",
+    link: "/dashboard2",
     isHide: true,
   },
   {
@@ -10,6 +16,22 @@ export const menuItems = [
     icon: "heroicons-outline:folder",
     link: "/processos",
     isHide: true,
+  },
+  {
+    title: "Clientes",
+    icon: "lucide:building",
+    link: "#",
+    isHide: true,
+    child: [
+      {
+        childtitle: "Centro de Custo",
+        childlink: "#",
+      },
+      {
+        childtitle: "Usuários",
+        childlink: "#",
+      },
+    ],
   },
   {
     title: "Financeiro",
@@ -42,22 +64,48 @@ export const menuItems = [
     ],
   },
   {
-    title: "Usuários",
-    icon: "heroicons-outline:users",
+    title: "Campos Tabelas",
+    icon: "lucide:table-2",
     link: "#",
     isHide: true,
+    child: [
+      {
+        childtitle: "Campos Cabeçalho",
+        childlink: "#",
+      },
+      {
+        childtitle: "Campos Itens",
+        childlink: "#",
+      },
+    ],
   },
   {
-    title: "Clientes",
-    icon: "heroicons-outline:user-group",
+    title: "Configurações",
+    icon: "heroicons-outline:cog",
     link: "#",
     isHide: true,
+    child: [
+      {
+        childtitle: "API",
+        childlink: "#",
+      },
+    ],
   },
   {
-    title: "Atividades (Logs)",
-    icon: "heroicons-outline:document",
+    title: "Segurança",
+    icon: "lucide:shield-check",
     link: "#",
     isHide: true,
+    child: [
+      {
+        childtitle: "Staffs",
+        childlink: "#",
+      },
+      {
+        childtitle: "Logs",
+        childlink: "#",
+      },
+    ],
   },
 ];
 

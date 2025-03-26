@@ -1,63 +1,54 @@
-import React, { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+"use client";
+
+import React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { menuItems } from "@/constant/data";
 import Icon from "@/components/ui/Icon";
+import { useSelector } from "react-redux";
 
 const Breadcrumbs = () => {
   const location = usePathname();
-  const locationName = location.replace("/", "");
-
-  const [isHide, setIsHide] = useState(null);
-  const [groupTitle, setGroupTitle] = useState("");
-
-  useEffect(() => {
-    const currentMenuItem = menuItems.find(
-      (item) => item.link === locationName
-    );
-
-    const currentChild = menuItems.find((item) =>
-      item.child?.find((child) => child.childlink === locationName)
-    );
-
-    if (currentMenuItem) {
-      setIsHide(currentMenuItem.isHide);
-    } else if (currentChild) {
-      setIsHide(currentChild?.isHide || false);
-      setGroupTitle(currentChild?.title);
-    }
-  }, [location, locationName]);
+  const locationNames = location.split("/").filter((item) => item !== "");
+  const customTitle = useSelector((state) => state.breadcrumb.customTitle);
 
   return (
-    <>
-      {!isHide ? (
-        <div className="flex space-x-3 rtl:space-x-reverse">
-          <ul className="breadcrumbs">
-            <li className="text-primary-500">
-              <Link href="/dashboard" className="text-lg">
-                <Icon icon="heroicons-outline:home" />
-              </Link>
-              <span className="breadcrumbs-icon rtl:transform rtl:rotate-180">
-                <Icon icon="heroicons:chevron-right" />
-              </span>
-            </li>
-            {groupTitle && (
-              <li className="text-primary-500">
-                <button type="button" className="capitalize">
-                  {groupTitle}
-                </button>
-                <span className="breadcrumbs-icon rtl:transform rtl:rotate-180">
-                  <Icon icon="heroicons:chevron-right" />
+    <div className="flex space-x-3 rtl:space-x-reverse">
+      <ul className="breadcrumbs">
+        <li className="text-primary-500">
+          <Link href="/dashboard" className="text-lg">
+            <Icon icon="mage:dashboard-bar" />
+          </Link>
+          <span className="breadcrumbs-icon rtl:transform rtl:rotate-180">
+            <Icon icon="heroicons:chevron-right" />
+          </span>
+        </li>
+        {locationNames.map((item, index) => {
+          const isLastItem = index === locationNames.length - 1;
+          const path = `/${locationNames.slice(0, index + 1).join("/")}`;
+          
+          const displayTitle = customTitle || item;
+
+          return (
+            <li key={index} className={!isLastItem ? "text-primary-500" : ""}>
+              {!isLastItem ? (
+                <>
+                  <Link href={path} className="capitalize">
+                    {item}
+                  </Link>
+                  <span className="breadcrumbs-icon rtl:transform rtl:rotate-180">
+                    <Icon icon="heroicons:chevron-right" />
+                  </span>
+                </>
+              ) : (
+                <span className="capitalize">
+                  {displayTitle}
                 </span>
-              </li>
-            )}
-            <li className="capitalize text-slate-500 dark:text-slate-400">
-              {locationName}
+              )}
             </li>
-          </ul>
-        </div>
-      ) : null}
-    </>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

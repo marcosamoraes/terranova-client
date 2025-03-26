@@ -1,4 +1,3 @@
-
 import "react-toastify/dist/ReactToastify.css";
 import "simplebar-react/dist/simplebar.min.css";
 import "flatpickr/dist/themes/light.css";
@@ -12,11 +11,12 @@ export const metadata = {
 }
 
 import ThemeProvider from "./theme-provider"
+
 export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en">
-        <body className="font-inter  custom-tippy dashcode-app">
+        <body className="font-inter custom-tippy dashcode-app">
           <ThemeProvider>
             {children}
           </ThemeProvider>

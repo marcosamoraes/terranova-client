@@ -43,7 +43,7 @@ const Processes = () => {
               <tr>
                 {columns.map((column, i) => 
                   visibleColumns[column.label] ? (
-                    <th key={i} scope="col" className="table-th text-center">
+                    <th key={`column-${i}`} scope="col" className="table-th text-center">
                       {column.label}
                     </th>
                   ) : null
@@ -52,10 +52,10 @@ const Processes = () => {
             </thead>
             <tbody className="bg-white divide-y divide-slate-100 dark:bg-slate-800 dark:divide-slate-700">
               {processesTableData.map((row, i) => (
-                <tr key={i} className="even:bg-slate-200 dark:even:bg-slate-700">
-                  {columns.map((column) =>
+                <tr key={`row-${i}`} className="even:bg-slate-200 dark:even:bg-slate-700">
+                  {columns.map((column, j) =>
                     visibleColumns[column.label] ? (
-                      <td key={column.label} className="table-td text-center">
+                      <td key={`row-column-${i}-${j}`} className="table-td text-center">
                         {column.href ? (
                           <Link 
                             href={column.href.replace("{slug}", row.slug)} 

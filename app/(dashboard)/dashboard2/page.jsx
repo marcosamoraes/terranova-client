@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import GroupChart2 from "@/components/partials/widget/chart/group-chart-2";
+import GroupChart5 from "@/components/partials/widget/chart/group-chart-5";
 
 import FullCalendar from "@fullcalendar/react";
 import { useSelector, useDispatch } from "react-redux";
@@ -58,14 +58,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-12 gap-5 mb-5">
-        <div className="col-span-12">
-          <div className="grid md:grid-cols-8 grid-cols-1 gap-4">
-            <GroupChart2 />
-          </div>
-        </div>
-      </div>
       <div className="grid grid-cols-12 gap-5 dashcode-calender">
+        <Card className="lg:col-span-2 col-span-12 bg-white" bodyClass="py-3 px-2 h-full">
+          <GroupChart5 />
+        </Card>
         <Card className="lg:col-span-2 col-span-12 bg-white">
           <div className="block pb-4 text-slate-800 dark:text-slate-400 font-semibold text-xs uppercase">
             Categorias Disponíveis
@@ -97,7 +93,7 @@ const Dashboard = () => {
             ))}
           </ul>
         </Card>
-        <Card className="lg:col-span-10 col-span-12 bg-white">
+        <Card className="lg:col-span-8 col-span-12 bg-white">
           <FullCalendar
             locale={ptBrLocale}
             plugins={[
@@ -125,10 +121,10 @@ const Dashboard = () => {
       </div>
       <div className="grid grid-cols-12 gap-5 mt-5">
         <Card className="col-span-12 b-0" bodyClass="px-0">
-          <div className="flex space-x-3 overflow-hidden overflow-x-auto pb-4 rtl:space-x-reverse">
+          <div className="flex space-x-3 overflow-hidden overflow-x-auto rtl:space-x-reverse">
             {columns?.map((column, i) => (
               <div key={column.id}>
-                <div className="w-[320px] flex-none h-full rounded bg-slate-200 dark:bg-slate-700">
+                <div className="w-[320px] flex-none rounded bg-slate-200 dark:bg-slate-700 h-[calc(100vh-700px)] overflow-hidden">
                   <div className="relative flex justify-between items-center bg-white dark:bg-slate-800 rounded shadow-base px-5 py-4">
                     <div
                       className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-[2px] bg-primary-500"
@@ -140,7 +136,7 @@ const Dashboard = () => {
                       ({String(column.tasks?.length || 0).padStart(2, '0')})
                     </div>
                   </div>
-                  <div className="px-2 py-2 h-full space-y-2">
+                  <div className="px-2 py-2 space-y-2 overflow-y-auto h-[calc(100vh-700px-70px)]">
                     {column.tasks?.map((task, j) => (
                       <div key={task.id}>
                         <Task task={task} />

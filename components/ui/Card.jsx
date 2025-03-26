@@ -7,7 +7,7 @@ const Card = ({
   subtitle,
   headerslot,
   className = "custom-class  bg-white ",
-  bodyClass = "p-6",
+  bodyClass = "px-6 py-3",
   noborder,
   titleClass = "custom-class ",
 }) => {
@@ -19,7 +19,7 @@ const Card = ({
         card rounded-md   dark:bg-slate-800   ${
           skin === "bordered"
             ? " border border-slate-200 dark:border-slate-700"
-            : "shadow-base"
+            : ""
         }
    
     ${className}

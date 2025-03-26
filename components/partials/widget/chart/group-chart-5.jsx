@@ -42,7 +42,7 @@ const statistics = [
     icon: "lucide:package",
   },
   {
-    title: "Registro",
+    title: "Disponível para Registro",
     tooltip: "Disponível para Registro",
     count: "30",
     bg: "bg-primary-500 dark:bg-primary-500	",
@@ -50,7 +50,7 @@ const statistics = [
     icon: "lucide:receipt",
   },
   {
-    title: "Faturamento",
+    title: "Disponível para Faturamento",
     tooltip: "Disponível para Faturamento",
     count: "20",
     bg: "bg-primary-500 dark:bg-primary-500	",
@@ -66,13 +66,13 @@ const statistics = [
   },
 ];
 
-const GroupChart2 = () => {
+const GroupChart5 = () => {
   return (
-    <>
+    <div className="flex flex-col justify-between h-full">
       {statistics.map((item, i) => (
         <div key={i}>
-          <Card bodyClass="pt-4 pb-3 px-4">
-            <div className="flex space-x-4 rtl:space-x-reverse">
+          <Card bodyClass="px-0">
+            <div className="flex space-x-2 rtl:space-x-reverse w-full">
               <div className="flex-none">
                 <div
                   className={`${item.bg} ${item.text} h-12 w-12 rounded-full flex flex-col items-center justify-center text-2xl`}
@@ -81,16 +81,16 @@ const GroupChart2 = () => {
                 </div>
               </div>
               <div className="flex-1"> 
-              <div className="text-slate-600 dark:text-slate-300 text-sm mb-1 font-medium max-w-[80%] truncate">
-                <Tooltip
-                  title={item.title}
-                  content={item.tooltip ?? item.title}
-                  placement="top"
-                  arrow
-                >
-                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-1 font-medium max-w-[100%] truncate">{item.title}</p>
-                </Tooltip>
-              </div>
+                <div className="text-slate-600 dark:text-slate-300 text-sm font-medium max-w-[calc(100%-20px)] truncate">
+                  <Tooltip
+                    title={item.title}
+                    content={item.tooltip ?? item.title}
+                    placement="top"
+                    arrow
+                  >
+                    <p className="text-slate-600 dark:text-slate-300 text-sm font-medium max-w-[100%] truncate">{item.title}</p>
+                  </Tooltip>
+                </div>
                 <div className="text-slate-900 dark:text-white text-lg font-medium">
                   {item.count}
                 </div>
@@ -99,8 +99,8 @@ const GroupChart2 = () => {
           </Card>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
-export default GroupChart2;
+export default GroupChart5;

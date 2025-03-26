@@ -62,6 +62,12 @@ const Sidebar = () => {
         >
           <Navmenu menus={menuItems} />
         </SimpleBar>
+
+        <div className="sidebar-footer absolute bottom-0 left-0 w-full px-1 py-2 flex items-center justify-center">
+          <div className="flex items-center space-x-2 rtl:space-x-reverse">
+            <span className="text-slate-500 text-sm">{process.env.NEXT_PUBLIC_APP_VERSION || '-'}</span>
+          </div>
+        </div>
       </div>
     </div>
   );

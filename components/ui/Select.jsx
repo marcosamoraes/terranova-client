@@ -91,7 +91,7 @@ const Select = ({
             size={size}
             defaultValue={defaultValue}
           >
-            <option value="" readonly>
+            <option value="" readOnly>
               {placeholder}
             </option>
             {options.map((option, i) => (

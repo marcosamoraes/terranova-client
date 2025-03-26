@@ -3,28 +3,33 @@
 import { useParams } from "next/navigation";
 import React, { useEffect, useState, Fragment } from "react";
 import { processesTableData } from "@/constant/table-data";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
 import Card from "@/components/ui/Card";
 import { Tab } from "@headlessui/react";
 import OrderTab from "@/components/partials/processTabs/OrderTab";
 import DossieTab from "@/components/partials/processTabs/DossieTab";
+import { useCustomBreadcrumb } from "@/store/breadcrumbSlice"; // Correct import path
+import ItemsTab from "@/components/partials/processTabs/ItemsTab";
 
 const Process = () => {
   const { slug } = useParams();
   const [process, setProcess] = useState(null);
 
+  useCustomBreadcrumb(process ? process.import : '', [process]);
+
   const tabs = [
-    { label: "Pedido", element: <OrderTab process={process} /> },
+    { label: "PO", element: <OrderTab process={process} /> },
+    { label: "Itens", element: <ItemsTab process={process} /> },
+    { label: "Invoice" },
+    { label: "LI" },
     { label: "Embarque" },
     { label: "Chegada" },
+    { label: "Desembaraço" },
     { label: "Entrega" },
     { label: "Financeiro" },
     { label: "Contêiner" },
     { label: "Dossiê", element: <DossieTab process={process} /> },
     { label: "Faturamento" },
-    { label: "Câmbio" },
-    { label: "Histórico" },
+    { label: "Status" },
   ];
 
   useEffect(() => {
@@ -42,19 +47,11 @@ const Process = () => {
 
   return (
     <div>
-      <div className="flex justify-end items-center mb-6 -mt-12">
-        <Link href="/processos" className="btn btn-dark btn-sm flex items-center gap-2">
-          <Icon icon="heroicons-outline:arrow-left" />
-          Voltar
-        </Link>
-      </div>
-
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
         {[
           { label: "Importação", value: process.import },
           { label: "Invoice", value: process.invoice },
           { label: "Fabricante", value: process.manufacturer },
-          { label: "Produto", value: process.product },
           { label: "Via", value: process.via },
         ].map((item, index) => (
           <div key={index}>
